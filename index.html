@@ -19,6 +19,7 @@
       --purple:#7c5cfc;
       --shadow:rgba(90,60,20,.12);
       --danger:#d92d20;
+      --danger-soft:rgba(217,45,32,.08);
     }
 
 ```
@@ -29,19 +30,19 @@ body{
     radial-gradient(circle at bottom right, rgba(124,92,252,.08), transparent 30%),
     var(--bg);
   color:var(--text);
-  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Segoe UI", sans-serif;
+  font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Segoe UI",sans-serif;
   min-height:100vh;
 }
 
 .wrap{
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 28px 16px 56px;
+  max-width:980px;
+  margin:0 auto;
+  padding:28px 16px 56px;
 }
 
 .hero{
   text-align:center;
-  margin-bottom: 18px;
+  margin-bottom:18px;
 }
 
 .eyebrow{
@@ -54,9 +55,9 @@ body{
 
 h1{
   margin:0;
-  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-size:clamp(2rem,5vw,3.25rem);
   line-height:1.18;
-  font-weight: 800;
+  font-weight:800;
 }
 
 .hero .accent{ color:var(--primary); }
@@ -109,60 +110,6 @@ h1{
   background:var(--line);
 }
 
-.name-row{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-}
-
-select, button{
-  font:inherit;
-}
-
-select{
-  flex:1;
-  min-width:220px;
-  border:1.5px solid var(--line);
-  background:#fff;
-  color:var(--text);
-  border-radius:14px;
-  padding:12px 14px;
-  outline:none;
-}
-
-select:focus{
-  border-color:var(--primary);
-}
-
-.btn{
-  border:none;
-  border-radius:14px;
-  padding:12px 16px;
-  cursor:pointer;
-  font-weight:700;
-  transition:.15s ease;
-}
-
-.btn:hover{ transform:translateY(-1px); }
-.btn:active{ transform:translateY(0); }
-
-.btn-primary{
-  background:var(--primary);
-  color:#fff;
-}
-
-.btn-ghost{
-  background:#fff;
-  color:var(--sub);
-  border:1.5px solid var(--line);
-}
-
-.btn-danger{
-  background:#fff;
-  color:var(--danger);
-  border:1.5px solid rgba(217,45,32,.2);
-}
-
 .helper{
   margin-top:10px;
   font-size:13px;
@@ -188,37 +135,38 @@ select:focus{
 
 .grid{
   display:grid;
-  grid-template-columns: repeat(auto-fill, minmax(145px, 1fr));
+  grid-template-columns:repeat(auto-fill,minmax(145px,1fr));
   gap:10px;
 }
 
 .chip{
   border:1.5px solid var(--line);
   background:#fff;
-  border-radius:16px;
-  padding:12px 12px;
+  border-radius:18px;
+  padding:13px 12px;
   text-align:left;
   transition:.15s ease;
-  min-height:74px;
+  min-height:80px;
   display:flex;
   flex-direction:column;
   justify-content:center;
   gap:4px;
   user-select:none;
+  position:relative;
+}
+
+.chip:hover{
+  transform:translateY(-1px);
+}
+
+.chip.selectable{
+  cursor:pointer;
 }
 
 .chip.mine{
   border-color:var(--primary);
-  box-shadow: inset 0 0 0 1px var(--primary);
-}
-
-.chip.clickable{
-  cursor:pointer;
-}
-
-.chip.clickable:hover{
-  transform:translateY(-1px);
-  box-shadow:0 8px 18px rgba(14,116,144,.08);
+  box-shadow:inset 0 0 0 1px var(--primary);
+  background:#fff;
 }
 
 .chip.checked{
@@ -227,17 +175,98 @@ select:focus{
 }
 
 .chip.dim{
-  opacity:.45;
+  opacity:.55;
+}
+
+.chip-badge{
+  position:absolute;
+  top:10px;
+  right:10px;
+  width:12px;
+  height:12px;
+  border-radius:50%;
+  border:2px solid var(--line);
+  background:#fff;
+}
+
+.chip.mine .chip-badge{
+  border-color:var(--primary);
+}
+
+.chip.checked .chip-badge{
+  background:var(--primary);
+  border-color:var(--primary);
 }
 
 .name{
   font-weight:800;
   font-size:14px;
+  padding-right:18px;
 }
 
 .dept{
   font-size:12px;
   color:var(--sub);
+}
+
+.my-panel{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-bottom:14px;
+}
+
+.my-selected{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:12px 14px;
+  font-size:14px;
+  color:var(--sub);
+  flex:1;
+  min-width:240px;
+}
+
+.my-selected strong{
+  color:var(--text);
+}
+
+.btn{
+  border:none;
+  border-radius:14px;
+  padding:12px 16px;
+  cursor:pointer;
+  font:inherit;
+  font-weight:700;
+  transition:.15s ease;
+}
+
+.btn:hover{ transform:translateY(-1px); }
+.btn:active{ transform:translateY(0); }
+
+.btn-primary{
+  background:var(--primary);
+  color:#fff;
+}
+
+.btn-ghost{
+  background:#fff;
+  color:var(--sub);
+  border:1.5px solid var(--line);
+}
+
+.btn-danger{
+  background:#fff;
+  color:var(--danger);
+  border:1.5px solid rgba(217,45,32,.22);
+}
+
+.btn-danger-soft{
+  background:var(--danger-soft);
+  color:var(--danger);
+  border:1.5px solid rgba(217,45,32,.12);
 }
 
 .admin-row{
@@ -290,7 +319,7 @@ select:focus{
 
 .team-grid{
   display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   gap:14px;
 }
 
@@ -349,11 +378,11 @@ select:focus{
 @media (max-width: 640px){
   .wrap{ padding:20px 12px 40px; }
   .card{ padding:16px; border-radius:18px; }
-  .grid{ grid-template-columns: repeat(2, minmax(0,1fr)); }
-  .name-row{ flex-direction:column; }
-  .name-row > *{ width:100%; }
+  .grid{ grid-template-columns:repeat(2,minmax(0,1fr)); }
   .admin-row{ flex-direction:column; }
   .admin-row > *{ width:100%; }
+  .my-panel{ flex-direction:column; }
+  .my-panel > *{ width:100%; }
   .btn{ width:100%; }
 }
 ```
@@ -374,21 +403,26 @@ select:focus{
 
 ```
 <div class="card">
-  <div class="section-title">👤 내 이름 선택</div>
-  <div class="name-row">
-    <select id="nameSelect"></select>
-    <button class="btn btn-primary" id="saveNameBtn">이름 저장</button>
-  </div>
-  <div class="helper" id="nameHelper">처음 1회만 본인 이름을 선택하면 됩니다.</div>
-</div>
+  <div class="section-title">👤 내 이름 선택 / 출석 체크</div>
 
-<div class="card">
-  <div class="section-title">🙋 출석 체크</div>
+  <div class="my-panel">
+    <div class="my-selected" id="mySelectedBox">
+      아직 내 이름을 선택하지 않았어요. 아래에서 <strong>내 이름 카드</strong>를 눌러 주세요.
+    </div>
+    <button class="btn btn-ghost" id="clearMyNameBtn">내 이름 다시 선택</button>
+  </div>
+
   <div class="stats">
     <div class="stat">현재 출석: <strong id="countInline">0</strong>명</div>
-    <div class="stat">내 이름 카드만 눌러서 출석/취소 가능</div>
+    <div class="stat">내 이름 카드를 한 번 누르면 선택, 다시 누르면 출석 체크</div>
   </div>
+
   <div class="grid" id="attendanceGrid"></div>
+
+  <div class="helper">
+    처음엔 <strong>내 이름 카드를 눌러서 본인 선택</strong>하고,<br>
+    그 다음부터는 <strong>같은 카드 눌러서 출석 on/off</strong> 하면 됩니다.
+  </div>
 </div>
 
 <div class="card">
@@ -397,9 +431,10 @@ select:focus{
     <button class="btn btn-ghost" id="loginBtn">관리자 로그인</button>
     <div class="admin-badge" id="adminBadge">관리자 로그인 완료</div>
     <button class="btn btn-primary" id="spinBtn" style="display:none;">🎲 팀 뽑기</button>
-    <button class="btn btn-danger" id="resetBtn" style="display:none;">🗑️ 결과 초기화</button>
+    <button class="btn btn-danger-soft" id="resetResultBtn" style="display:none;">결과만 초기화</button>
+    <button class="btn btn-danger" id="resetAllBtn" style="display:none;">출석 + 결과 전체 초기화</button>
   </div>
-  <div class="notice">팀 뽑기는 관리자만 할 수 있고, 출석 체크는 각자 직접 합니다.</div>
+  <div class="notice">팀 뽑기와 초기화는 관리자만 할 수 있어요.</div>
 </div>
 
 <div class="card">
@@ -479,15 +514,16 @@ select:focus{
     const todayText = document.getElementById("todayText");
     const countTop = document.getElementById("countTop");
     const countInline = document.getElementById("countInline");
-    const nameSelect = document.getElementById("nameSelect");
-    const nameHelper = document.getElementById("nameHelper");
+    const mySelectedBox = document.getElementById("mySelectedBox");
     const attendanceGrid = document.getElementById("attendanceGrid");
     const rouletteStage = document.getElementById("rouletteStage");
     const resultGrid = document.getElementById("resultGrid");
-    const saveNameBtn = document.getElementById("saveNameBtn");
+
+    const clearMyNameBtn = document.getElementById("clearMyNameBtn");
     const loginBtn = document.getElementById("loginBtn");
     const spinBtn = document.getElementById("spinBtn");
-    const resetBtn = document.getElementById("resetBtn");
+    const resetResultBtn = document.getElementById("resetResultBtn");
+    const resetAllBtn = document.getElementById("resetAllBtn");
     const adminBadge = document.getElementById("adminBadge");
 
     todayText.textContent = now.toLocaleDateString("ko-KR", {
@@ -497,23 +533,19 @@ select:focus{
       weekday: "short",
     });
 
-    function renderNameOptions() {
-      nameSelect.innerHTML = '<option value="">내 이름을 선택하세요</option>';
-      MEMBERS.forEach(member => {
-        const option = document.createElement("option");
-        option.value = member.name;
-        option.textContent = `${member.name} · ${member.dept}`;
-        if (member.name === myName) option.selected = true;
-        nameSelect.appendChild(option);
-      });
-      updateNameHelper();
-    }
-
-    function updateNameHelper() {
+    function updateMySelectedBox() {
       const me = MEMBERS.find(m => m.name === myName);
-      nameHelper.innerHTML = me
-        ? `현재 선택: <strong>${me.name}</strong> (${me.dept})`
-        : '처음 1회만 본인 이름을 선택하면 됩니다.';
+      if (!me) {
+        mySelectedBox.innerHTML = `아직 내 이름을 선택하지 않았어요. 아래에서 <strong>내 이름 카드</strong>를 눌러 주세요.`;
+        return;
+      }
+
+      const checked = !!attendanceData[myName];
+      mySelectedBox.innerHTML = `
+        현재 선택: <strong>${me.name}</strong> (${me.dept})
+        <br>
+        출석 상태: <strong>${checked ? "출석 완료" : "미출석"}</strong>
+      `;
     }
 
     function updateCounts() {
@@ -530,33 +562,42 @@ select:focus{
         const isChecked = !!attendanceData[member.name];
 
         const chip = document.createElement("div");
-        chip.className = "chip";
-        if (isMine) chip.classList.add("mine", "clickable");
-        else chip.classList.add("dim");
+        chip.className = "chip selectable";
+        if (isMine) chip.classList.add("mine");
+        else if (myName) chip.classList.add("dim");
         if (isChecked) chip.classList.add("checked");
 
         chip.innerHTML = `
+          <span class="chip-badge"></span>
           <div class="name">${member.name}${isMine ? " (나)" : ""}</div>
           <div class="dept">${member.dept}</div>
         `;
 
-        if (isMine) {
-          chip.addEventListener("click", async () => {
-            if (!myName) return;
+        chip.addEventListener("click", async () => {
+          // 아직 내 이름 선택 전 -> 이 카드를 내 이름으로 지정
+          if (!myName) {
+            myName = member.name;
+            localStorage.setItem("lunch_my_name", myName);
+            updateMySelectedBox();
+            renderAttendanceGrid();
+            return;
+          }
 
-            const myRef = ref(db, `roulette/${TODAY}/attendance/${member.name}`);
-            if (attendanceData[member.name]) {
-              await remove(myRef);
-            } else {
-              await set(myRef, {
-                name: member.name,
-                dept: member.dept,
-                gender: member.gender,
-                checkedAt: Date.now()
-              });
-            }
-          });
-        }
+          // 이미 내 이름 정한 상태 -> 내 카드만 출석 toggle
+          if (member.name !== myName) return;
+
+          const myRef = ref(db, `roulette/${TODAY}/attendance/${member.name}`);
+          if (attendanceData[member.name]) {
+            await remove(myRef);
+          } else {
+            await set(myRef, {
+              name: member.name,
+              dept: member.dept,
+              gender: member.gender,
+              checkedAt: Date.now()
+            });
+          }
+        });
 
         attendanceGrid.appendChild(chip);
       });
@@ -581,11 +622,13 @@ select:focus{
 
     function scoreTeams(teams) {
       let score = 0;
+
       teams.forEach(team => {
         const deptCounts = {};
         team.forEach(member => {
           deptCounts[member.dept] = (deptCounts[member.dept] || 0) + 1;
         });
+
         Object.values(deptCounts).forEach(count => {
           if (count > 1) score += (count - 1) * 2;
         });
@@ -700,7 +743,7 @@ select:focus{
       rouletteStage.innerHTML = `<div style="font-size:1.1rem;font-weight:800;color:var(--primary)">🎉 총 ${data.teams.length}팀 구성 완료!</div>`;
 
       resultGrid.innerHTML = "";
-      data.teams.forEach((team, i) => {
+      data.teams.forEach(team => {
         const card = document.createElement("div");
         card.className = "team-card";
         card.style.borderTop = `3px solid ${team.color}`;
@@ -719,18 +762,6 @@ select:focus{
       });
     }
 
-    function saveMyName() {
-      const value = nameSelect.value;
-      if (!value) {
-        alert("이름을 선택해 주세요.");
-        return;
-      }
-      myName = value;
-      localStorage.setItem("lunch_my_name", myName);
-      updateNameHelper();
-      renderAttendanceGrid();
-    }
-
     function loginAdmin() {
       const pw = prompt("관리자 비밀번호를 입력해 주세요.");
       if (pw !== ADMIN_PASSWORD) {
@@ -741,27 +772,43 @@ select:focus{
       isAdmin = true;
       loginBtn.style.display = "none";
       spinBtn.style.display = "inline-block";
-      resetBtn.style.display = "inline-block";
+      resetResultBtn.style.display = "inline-block";
+      resetAllBtn.style.display = "inline-block";
       adminBadge.style.display = "inline-flex";
+    }
+
+    async function resetResultOnly() {
+      if (!isAdmin) return;
+      const ok = confirm("결과만 초기화할까요?");
+      if (!ok) return;
+      await remove(resultRef);
     }
 
     async function resetAll() {
       if (!isAdmin) return;
       const ok = confirm("출석과 결과를 모두 초기화할까요?");
       if (!ok) return;
-
       await remove(attendanceRootRef);
       await remove(resultRef);
     }
 
-    saveNameBtn.addEventListener("click", saveMyName);
+    function clearMyName() {
+      myName = "";
+      localStorage.removeItem("lunch_my_name");
+      updateMySelectedBox();
+      renderAttendanceGrid();
+    }
+
+    clearMyNameBtn.addEventListener("click", clearMyName);
     loginBtn.addEventListener("click", loginAdmin);
     spinBtn.addEventListener("click", spinRoulette);
-    resetBtn.addEventListener("click", resetAll);
+    resetResultBtn.addEventListener("click", resetResultOnly);
+    resetAllBtn.addEventListener("click", resetAll);
 
     onValue(attendanceRootRef, snap => {
       attendanceData = snap.val() || {};
       updateCounts();
+      updateMySelectedBox();
       renderAttendanceGrid();
     });
 
@@ -769,8 +816,8 @@ select:focus{
       renderResult(snap.val());
     });
 
-    renderNameOptions();
     updateCounts();
+    updateMySelectedBox();
     renderAttendanceGrid();
   </script>
 
