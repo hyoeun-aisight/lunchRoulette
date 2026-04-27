@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
@@ -22,373 +21,331 @@
       --danger-soft:rgba(217,45,32,.08);
     }
 
+    body{
+      margin:0;
+      background:
+        radial-gradient(circle at top left, rgba(232,93,58,.08), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(124,92,252,.08), transparent 30%),
+        var(--bg);
+      color:var(--text);
+      font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Segoe UI",sans-serif;
+      min-height:100vh;
+    }
 
-body{
-  margin:0;
-  background:
-    radial-gradient(circle at top left, rgba(232,93,58,.08), transparent 28%),
-    radial-gradient(circle at bottom right, rgba(124,92,252,.08), transparent 30%),
-    var(--bg);
-  color:var(--text);
-  font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Segoe UI",sans-serif;
-  min-height:100vh;
-}
+    .wrap{
+      max-width:980px;
+      margin:0 auto;
+      padding:28px 16px 56px;
+    }
 
-.wrap{
-  max-width:980px;
-  margin:0 auto;
-  padding:28px 16px 56px;
-}
+    .hero{
+      text-align:center;
+      margin-bottom:18px;
+    }
 
-.hero{
-  text-align:center;
-  margin-bottom:18px;
-}
+    .eyebrow{
+      font-size:12px;
+      color:var(--sub);
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      margin-bottom:10px;
+    }
 
-.eyebrow{
-  font-size:12px;
-  color:var(--sub);
-  letter-spacing:.18em;
-  text-transform:uppercase;
-  margin-bottom:10px;
-}
+    h1{
+      margin:0;
+      font-size:clamp(2rem,5vw,3.25rem);
+      line-height:1.18;
+      font-weight:800;
+    }
 
-h1{
-  margin:0;
-  font-size:clamp(2rem,5vw,3.25rem);
-  line-height:1.18;
-  font-weight:800;
-}
+    .hero .accent{ color:var(--primary); }
 
-.hero .accent{ color:var(--primary); }
+    .meta-row{
+      display:flex;
+      gap:10px;
+      justify-content:center;
+      flex-wrap:wrap;
+      margin-top:14px;
+    }
 
-.meta-row{
-  display:flex;
-  gap:10px;
-  justify-content:center;
-  flex-wrap:wrap;
-  margin-top:14px;
-}
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 14px;
+      border-radius:999px;
+      font-size:13px;
+      background:#fff;
+      border:1px solid var(--line);
+      color:var(--sub);
+    }
 
-.pill{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  padding:8px 14px;
-  border-radius:999px;
-  font-size:13px;
-  background:#fff;
-  border:1px solid var(--line);
-  color:var(--sub);
-}
+    .card{
+      background:var(--card);
+      border:1.5px solid var(--line);
+      border-radius:22px;
+      box-shadow:0 6px 24px var(--shadow);
+      padding:20px;
+      margin-top:16px;
+    }
 
-.card{
-  background:var(--card);
-  border:1.5px solid var(--line);
-  border-radius:22px;
-  box-shadow:0 6px 24px var(--shadow);
-  padding:20px;
-  margin-top:16px;
-}
+    .section-title{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-size:14px;
+      font-weight:800;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--sub);
+      margin-bottom:16px;
+    }
 
-.section-title{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  font-size:14px;
-  font-weight:800;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  color:var(--sub);
-  margin-bottom:16px;
-}
+    .section-title::after{
+      content:"";
+      flex:1;
+      height:1px;
+      background:var(--line);
+    }
 
-.section-title::after{
-  content:"";
-  flex:1;
-  height:1px;
-  background:var(--line);
-}
+    .helper{
+      margin-top:10px;
+      font-size:13px;
+      color:var(--sub);
+      line-height:1.7;
+    }
 
-.helper{
-  margin-top:10px;
-  font-size:13px;
-  color:var(--sub);
-  line-height:1.7;
-}
+    .stats{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-bottom:14px;
+    }
 
-.stats{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-bottom:14px;
-}
+    .stat{
+      padding:9px 14px;
+      border-radius:999px;
+      background:#fff;
+      border:1px solid var(--line);
+      font-size:13px;
+      color:var(--sub);
+    }
 
-.stat{
-  padding:9px 14px;
-  border-radius:999px;
-  background:#fff;
-  border:1px solid var(--line);
-  font-size:13px;
-  color:var(--sub);
-}
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(145px,1fr));
+      gap:10px;
+    }
 
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(145px,1fr));
-  gap:10px;
-}
+    .chip{
+      border:1.5px solid var(--line);
+      background:#fff;
+      border-radius:18px;
+      padding:13px 12px;
+      text-align:left;
+      transition:.15s ease;
+      min-height:80px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      gap:4px;
+      user-select:none;
+      position:relative;
+    }
 
-.chip{
-  border:1.5px solid var(--line);
-  background:#fff;
-  border-radius:18px;
-  padding:13px 12px;
-  text-align:left;
-  transition:.15s ease;
-  min-height:80px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  gap:4px;
-  user-select:none;
-  position:relative;
-}
+    .chip:hover{
+      transform:translateY(-1px);
+    }
 
-.chip:hover{
-  transform:translateY(-1px);
-}
+    .chip.selectable{
+      cursor:pointer;
+    }
 
-.chip.selectable{
-  cursor:pointer;
-}
+    .chip.checked{
+      background:var(--primary-soft);
+      border-color:rgba(14,116,144,.35);
+    }
 
-.chip.mine{
-  border-color:var(--primary);
-  box-shadow:inset 0 0 0 1px var(--primary);
-  background:#fff;
-}
+    .chip-badge{
+      position:absolute;
+      top:10px;
+      right:10px;
+      width:12px;
+      height:12px;
+      border-radius:50%;
+      border:2px solid var(--line);
+      background:#fff;
+    }
 
-.chip.checked{
-  background:var(--primary-soft);
-  border-color:rgba(14,116,144,.35);
-}
+    .chip.checked .chip-badge{
+      background:var(--primary);
+      border-color:var(--primary);
+    }
 
-.chip.dim{
-  opacity:.55;
-}
+    .name{
+      font-weight:800;
+      font-size:14px;
+      padding-right:18px;
+    }
 
-.chip-badge{
-  position:absolute;
-  top:10px;
-  right:10px;
-  width:12px;
-  height:12px;
-  border-radius:50%;
-  border:2px solid var(--line);
-  background:#fff;
-}
+    .dept{
+      font-size:12px;
+      color:var(--sub);
+    }
 
-.chip.mine .chip-badge{
-  border-color:var(--primary);
-}
+    .btn{
+      border:none;
+      border-radius:14px;
+      padding:12px 16px;
+      cursor:pointer;
+      font:inherit;
+      font-weight:700;
+      transition:.15s ease;
+    }
 
-.chip.checked .chip-badge{
-  background:var(--primary);
-  border-color:var(--primary);
-}
+    .btn:hover{ transform:translateY(-1px); }
+    .btn:active{ transform:translateY(0); }
 
-.name{
-  font-weight:800;
-  font-size:14px;
-  padding-right:18px;
-}
+    .btn-primary{
+      background:var(--primary);
+      color:#fff;
+    }
 
-.dept{
-  font-size:12px;
-  color:var(--sub);
-}
+    .btn-ghost{
+      background:#fff;
+      color:var(--sub);
+      border:1.5px solid var(--line);
+    }
 
-.my-panel{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-bottom:14px;
-}
+    .btn-danger{
+      background:#fff;
+      color:var(--danger);
+      border:1.5px solid rgba(217,45,32,.22);
+    }
 
-.my-selected{
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:16px;
-  padding:12px 14px;
-  font-size:14px;
-  color:var(--sub);
-  flex:1;
-  min-width:240px;
-}
+    .btn-danger-soft{
+      background:var(--danger-soft);
+      color:var(--danger);
+      border:1.5px solid rgba(217,45,32,.12);
+    }
 
-.my-selected strong{
-  color:var(--text);
-}
+    .admin-row{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:center;
+    }
 
-.btn{
-  border:none;
-  border-radius:14px;
-  padding:12px 16px;
-  cursor:pointer;
-  font:inherit;
-  font-weight:700;
-  transition:.15s ease;
-}
+    .admin-badge{
+      font-size:13px;
+      color:#fff;
+      background:var(--purple);
+      padding:8px 12px;
+      border-radius:999px;
+      display:none;
+    }
 
-.btn:hover{ transform:translateY(-1px); }
-.btn:active{ transform:translateY(0); }
+    .stage{
+      min-height:110px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      border-radius:18px;
+      background:#fff;
+      border:1.5px dashed var(--line);
+      padding:20px;
+      margin-bottom:16px;
+    }
 
-.btn-primary{
-  background:var(--primary);
-  color:#fff;
-}
+    .idle{
+      color:#b09b85;
+      font-style:italic;
+      line-height:1.7;
+    }
 
-.btn-ghost{
-  background:#fff;
-  color:var(--sub);
-  border:1.5px solid var(--line);
-}
+    .spinning{
+      font-size:2rem;
+      font-weight:800;
+      color:var(--primary);
+      animation:flash .12s infinite;
+    }
 
-.btn-danger{
-  background:#fff;
-  color:var(--danger);
-  border:1.5px solid rgba(217,45,32,.22);
-}
+    @keyframes flash{
+      0%,100%{opacity:1;}
+      50%{opacity:.3;}
+    }
 
-.btn-danger-soft{
-  background:var(--danger-soft);
-  color:var(--danger);
-  border:1.5px solid rgba(217,45,32,.12);
-}
+    .team-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:14px;
+    }
 
-.admin-row{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  align-items:center;
-  justify-content:center;
-}
+    .team-card{
+      background:#fff;
+      border:1.5px solid var(--line);
+      border-radius:18px;
+      padding:16px;
+      box-shadow:0 4px 16px rgba(0,0,0,.04);
+    }
 
-.admin-badge{
-  font-size:13px;
-  color:#fff;
-  background:var(--purple);
-  padding:8px 12px;
-  border-radius:999px;
-  display:none;
-}
+    .team-title{
+      font-weight:800;
+      font-size:14px;
+      margin-bottom:12px;
+    }
 
-.stage{
-  min-height:110px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  border-radius:18px;
-  background:#fff;
-  border:1.5px dashed var(--line);
-  padding:20px;
-  margin-bottom:16px;
-}
+    .member{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 0;
+      border-bottom:1px solid #f1e8da;
+      font-size:14px;
+    }
 
-.idle{
-  color:#b09b85;
-  font-style:italic;
-  line-height:1.7;
-}
+    .member:last-child{
+      border-bottom:none;
+    }
 
-.spinning{
-  font-size:2rem;
-  font-weight:800;
-  color:var(--primary);
-  animation:flash .12s infinite;
-}
+    .dept-tag{
+      margin-left:auto;
+      font-size:11px;
+      color:var(--sub);
+      background:#f8f2ea;
+      border:1px solid var(--line);
+      padding:3px 7px;
+      border-radius:999px;
+    }
 
-@keyframes flash{
-  0%,100%{opacity:1;}
-  50%{opacity:.3;}
-}
+    .notice{
+      font-size:12px;
+      color:var(--sub);
+      text-align:center;
+      margin-top:12px;
+      line-height:1.7;
+    }
 
-.team-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:14px;
-}
+    .footer{
+      text-align:center;
+      margin-top:18px;
+      color:#9b8875;
+      font-size:12px;
+    }
 
-.team-card{
-  background:#fff;
-  border:1.5px solid var(--line);
-  border-radius:18px;
-  padding:16px;
-  box-shadow:0 4px 16px rgba(0,0,0,.04);
-}
-
-.team-title{
-  font-weight:800;
-  font-size:14px;
-  margin-bottom:12px;
-}
-
-.member{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  padding:8px 0;
-  border-bottom:1px solid #f1e8da;
-  font-size:14px;
-}
-
-.member:last-child{
-  border-bottom:none;
-}
-
-.dept-tag{
-  margin-left:auto;
-  font-size:11px;
-  color:var(--sub);
-  background:#f8f2ea;
-  border:1px solid var(--line);
-  padding:3px 7px;
-  border-radius:999px;
-}
-
-.notice{
-  font-size:12px;
-  color:var(--sub);
-  text-align:center;
-  margin-top:12px;
-  line-height:1.7;
-}
-
-.footer{
-  text-align:center;
-  margin-top:18px;
-  color:#9b8875;
-  font-size:12px;
-}
-
-@media (max-width: 640px){
-  .wrap{ padding:20px 12px 40px; }
-  .card{ padding:16px; border-radius:18px; }
-  .grid{ grid-template-columns:repeat(2,minmax(0,1fr)); }
-  .admin-row{ flex-direction:column; }
-  .admin-row > *{ width:100%; }
-  .my-panel{ flex-direction:column; }
-  .my-panel > *{ width:100%; }
-  .btn{ width:100%; }
-}
-
-
+    @media (max-width: 640px){
+      .wrap{ padding:20px 12px 40px; }
+      .card{ padding:16px; border-radius:18px; }
+      .grid{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .admin-row{ flex-direction:column; }
+      .admin-row > *{ width:100%; }
+      .btn{ width:100%; }
+    }
   </style>
 </head>
+
 <body>
   <div class="wrap">
     <div class="hero">
@@ -401,54 +358,38 @@ h1{
       </div>
     </div>
 
+    <div class="card">
+      <div class="section-title">🔐 관리자 출석 체크</div>
 
-<div class="card">
-  <div class="section-title">👤 내 이름 선택 / 출석 체크</div>
+      <div class="admin-row">
+        <button class="btn btn-ghost" id="loginBtn">관리자 로그인</button>
+        <div class="admin-badge" id="adminBadge">관리자 로그인 완료</div>
+        <button class="btn btn-primary" id="spinBtn" style="display:none;">🎲 팀 뽑기</button>
+        <button class="btn btn-danger-soft" id="resetResultBtn" style="display:none;">결과만 초기화</button>
+        <button class="btn btn-danger" id="resetAllBtn" style="display:none;">출석 + 결과 전체 초기화</button>
+      </div>
 
-  <div class="my-panel">
-    <div class="my-selected" id="mySelectedBox">
-      아직 내 이름을 선택하지 않았어요. 아래에서 <strong>내 이름 카드</strong>를 눌러 주세요.
+      <div class="stats" style="margin-top:16px;">
+        <div class="stat">현재 출석: <strong id="countInline">0</strong>명</div>
+        <div class="stat">관리자가 명단을 눌러 출석 on/off</div>
+      </div>
+
+      <div class="grid" id="adminAttendanceGrid" style="display:none;"></div>
+
+      <div class="helper">
+        관리자 로그인 후 명단이 보입니다. 참석자를 클릭하면 출석 체크되고, 다시 클릭하면 출석 해제됩니다.
+      </div>
     </div>
-    <button class="btn btn-ghost" id="clearMyNameBtn">내 이름 다시 선택</button>
-  </div>
 
-  <div class="stats">
-    <div class="stat">현재 출석: <strong id="countInline">0</strong>명</div>
-    <div class="stat">내 이름 카드를 한 번 누르면 선택, 다시 누르면 출석 체크</div>
-  </div>
+    <div class="card">
+      <div class="section-title">🎯 결과</div>
+      <div class="stage" id="rouletteStage">
+        <div class="idle">관리자가 팀을 뽑으면 결과가 여기 나타나요 🎲</div>
+      </div>
+      <div class="team-grid" id="resultGrid"></div>
+    </div>
 
-  <div class="grid" id="attendanceGrid"></div>
-
-  <div class="helper">
-    처음엔 <strong>내 이름 카드를 눌러서 본인 선택</strong>하고,<br>
-    그 다음부터는 <strong>같은 카드 눌러서 출석 on/off</strong> 하면 됩니다.
-  </div>
-</div>
-
-<div class="card">
-  <div class="section-title">🔐 관리자</div>
-  <div class="admin-row">
-    <button class="btn btn-ghost" id="loginBtn">관리자 로그인</button>
-    <div class="admin-badge" id="adminBadge">관리자 로그인 완료</div>
-    <button class="btn btn-primary" id="spinBtn" style="display:none;">🎲 팀 뽑기</button>
-    <button class="btn btn-danger-soft" id="resetResultBtn" style="display:none;">결과만 초기화</button>
-    <button class="btn btn-danger" id="resetAllBtn" style="display:none;">출석 + 결과 전체 초기화</button>
-  </div>
-  <div class="notice">팀 뽑기와 초기화는 관리자만 할 수 있어요.</div>
-</div>
-
-<div class="card">
-  <div class="section-title">🎯 결과</div>
-  <div class="stage" id="rouletteStage">
-    <div class="idle">관리자가 팀을 뽑으면 결과가 여기 나타나요 🎲</div>
-  </div>
-  <div class="team-grid" id="resultGrid"></div>
-</div>
-
-<div class="footer">© 2026 AIsight. Lunch Roulette System
-</div>
-
-
+    <div class="footer">© 2026 AIsight. Lunch Roulette System</div>
   </div>
 
   <script type="module">
@@ -466,7 +407,7 @@ h1{
     };
 
     const MEMBERS = [
-      { name:'Hyoeun',   dept:'Admin',  gender:'F' },
+      { name:'Hyoeun',   dept:'Admin',    gender:'F' },
       { name:'Hyunjung', dept:'HR',       gender:'F' },
       { name:'Haneul',   dept:'HR',       gender:'F' },
       { name:'Reeneu',   dept:'UXUI',     gender:'F' },
@@ -508,24 +449,21 @@ h1{
     const attendanceRootRef = ref(db, `roulette/${TODAY}/attendance`);
     const resultRef = ref(db, `roulette/${TODAY}/result`);
 
-    let myName = localStorage.getItem("lunch_my_name") || "";
     let isAdmin = false;
     let attendanceData = {};
 
     const todayText = document.getElementById("todayText");
     const countTop = document.getElementById("countTop");
     const countInline = document.getElementById("countInline");
-    const mySelectedBox = document.getElementById("mySelectedBox");
-    const attendanceGrid = document.getElementById("attendanceGrid");
     const rouletteStage = document.getElementById("rouletteStage");
     const resultGrid = document.getElementById("resultGrid");
 
-    const clearMyNameBtn = document.getElementById("clearMyNameBtn");
     const loginBtn = document.getElementById("loginBtn");
     const spinBtn = document.getElementById("spinBtn");
     const resetResultBtn = document.getElementById("resetResultBtn");
     const resetAllBtn = document.getElementById("resetAllBtn");
     const adminBadge = document.getElementById("adminBadge");
+    const adminAttendanceGrid = document.getElementById("adminAttendanceGrid");
 
     todayText.textContent = now.toLocaleDateString("ko-KR", {
       year: "numeric",
@@ -534,64 +472,37 @@ h1{
       weekday: "short",
     });
 
-    function updateMySelectedBox() {
-      const me = MEMBERS.find(m => m.name === myName);
-      if (!me) {
-        mySelectedBox.innerHTML = `아직 내 이름을 선택하지 않았어요. 아래에서 <strong>내 이름 카드</strong>를 눌러 주세요.`;
-        return;
-      }
-
-      const checked = !!attendanceData[myName];
-      mySelectedBox.innerHTML = `
-        현재 선택: <strong>${me.name}</strong> (${me.dept})
-        <br>
-        출석 상태: <strong>${checked ? "출석 완료" : "미출석"}</strong>
-      `;
-    }
-
     function updateCounts() {
       const count = Object.keys(attendanceData).length;
       countTop.textContent = count;
       countInline.textContent = count;
     }
 
-    function renderAttendanceGrid() {
-      attendanceGrid.innerHTML = "";
+    function renderAdminAttendanceGrid() {
+      adminAttendanceGrid.innerHTML = "";
 
       MEMBERS.forEach(member => {
-        const isMine = member.name === myName;
         const isChecked = !!attendanceData[member.name];
 
         const chip = document.createElement("div");
         chip.className = "chip selectable";
-        if (isMine) chip.classList.add("mine");
-        else if (myName) chip.classList.add("dim");
         if (isChecked) chip.classList.add("checked");
 
         chip.innerHTML = `
           <span class="chip-badge"></span>
-          <div class="name">${member.name}${isMine ? " (나)" : ""}</div>
+          <div class="name">${member.name} ${isChecked ? "✅" : ""}</div>
           <div class="dept">${member.dept}</div>
         `;
 
         chip.addEventListener("click", async () => {
-          // 아직 내 이름 선택 전 -> 이 카드를 내 이름으로 지정
-          if (!myName) {
-            myName = member.name;
-            localStorage.setItem("lunch_my_name", myName);
-            updateMySelectedBox();
-            renderAttendanceGrid();
-            return;
-          }
+          if (!isAdmin) return;
 
-          // 이미 내 이름 정한 상태 -> 내 카드만 출석 toggle
-          if (member.name !== myName) return;
+          const memberRef = ref(db, `roulette/${TODAY}/attendance/${member.name}`);
 
-          const myRef = ref(db, `roulette/${TODAY}/attendance/${member.name}`);
           if (attendanceData[member.name]) {
-            await remove(myRef);
+            await remove(memberRef);
           } else {
-            await set(myRef, {
+            await set(memberRef, {
               name: member.name,
               dept: member.dept,
               gender: member.gender,
@@ -600,7 +511,7 @@ h1{
           }
         });
 
-        attendanceGrid.appendChild(chip);
+        adminAttendanceGrid.appendChild(chip);
       });
     }
 
@@ -614,11 +525,15 @@ h1{
     }
 
     function getTeamCount(n) {
-      if (n <= 6) return 1;
-      if (n <= 8) return 2;
-      if (n <= 12) return 3;
-      if (n <= 16) return 4;
-      return Math.round(n / 4);
+      if (n <= 7) return 1;
+
+      let teamCount = Math.ceil(n / 5);
+
+      while (teamCount > 1 && Math.floor(n / teamCount) < 4) {
+        teamCount--;
+      }
+
+      return teamCount;
     }
 
     function scoreTeams(teams) {
@@ -626,6 +541,7 @@ h1{
 
       teams.forEach(team => {
         const deptCounts = {};
+
         team.forEach(member => {
           deptCounts[member.dept] = (deptCounts[member.dept] || 0) + 1;
         });
@@ -638,7 +554,13 @@ h1{
       const sizes = teams.map(t => t.length);
       const max = Math.max(...sizes);
       const min = Math.min(...sizes);
+
       score += (max - min) * 3;
+
+      teams.forEach(team => {
+        if (team.length < 4) score += 999;
+        if (team.length > 5) score += (team.length - 5) * 10;
+      });
 
       return score;
     }
@@ -647,12 +569,12 @@ h1{
       const n = memberObjects.length;
       const teamCount = getTeamCount(n);
 
-      if (n <= 4) return [memberObjects];
+      if (teamCount === 1) return [memberObjects];
 
       let bestTeams = null;
       let bestScore = Infinity;
 
-      for (let t = 0; t < 400; t++) {
+      for (let t = 0; t < 500; t++) {
         const shuffled = shuffle(memberObjects);
         const teams = Array.from({ length: teamCount }, () => []);
 
@@ -661,15 +583,13 @@ h1{
           let bestLocalScore = Infinity;
 
           for (let i = 0; i < teams.length; i++) {
+            if (teams[i].length >= 5) continue;
+
             const tempTeams = teams.map(team => [...team]);
             tempTeams[i].push(member);
 
-            const sizes = tempTeams.map(team => team.length);
-            const currentMax = Math.max(...sizes);
-            const currentMin = Math.min(...sizes);
-            const tooBigPenalty = currentMax - currentMin > 1 ? 100 : 0;
+            const localScore = scoreTeams(tempTeams);
 
-            const localScore = scoreTeams(tempTeams) + tooBigPenalty;
             if (localScore < bestLocalScore) {
               bestLocalScore = localScore;
               bestIndex = i;
@@ -680,6 +600,7 @@ h1{
         });
 
         const totalScore = scoreTeams(teams);
+
         if (totalScore < bestScore) {
           bestScore = totalScore;
           bestTeams = teams.map(team => [...team]);
@@ -719,6 +640,7 @@ h1{
       clearInterval(interval);
 
       const teams = makeBalancedTeams(members);
+
       const payload = {
         teams: teams.map((team, i) => ({
           label: `Team ${i + 1}`,
@@ -744,6 +666,7 @@ h1{
       rouletteStage.innerHTML = `<div style="font-size:1.1rem;font-weight:800;color:var(--primary)">🎉 총 ${data.teams.length}팀 구성 완료!</div>`;
 
       resultGrid.innerHTML = "";
+
       data.teams.forEach(team => {
         const card = document.createElement("div");
         card.className = "team-card";
@@ -765,42 +688,43 @@ h1{
 
     function loginAdmin() {
       const pw = prompt("관리자 비밀번호를 입력해 주세요.");
+
       if (pw !== ADMIN_PASSWORD) {
         if (pw !== null) alert("비밀번호가 올바르지 않아요.");
         return;
       }
 
       isAdmin = true;
+
       loginBtn.style.display = "none";
       spinBtn.style.display = "inline-block";
       resetResultBtn.style.display = "inline-block";
       resetAllBtn.style.display = "inline-block";
       adminBadge.style.display = "inline-flex";
+      adminAttendanceGrid.style.display = "grid";
+
+      renderAdminAttendanceGrid();
     }
 
     async function resetResultOnly() {
       if (!isAdmin) return;
+
       const ok = confirm("결과만 초기화할까요?");
       if (!ok) return;
+
       await remove(resultRef);
     }
 
     async function resetAll() {
       if (!isAdmin) return;
+
       const ok = confirm("출석과 결과를 모두 초기화할까요?");
       if (!ok) return;
+
       await remove(attendanceRootRef);
       await remove(resultRef);
     }
 
-    function clearMyName() {
-      myName = "";
-      localStorage.removeItem("lunch_my_name");
-      updateMySelectedBox();
-      renderAttendanceGrid();
-    }
-
-    clearMyNameBtn.addEventListener("click", clearMyName);
     loginBtn.addEventListener("click", loginAdmin);
     spinBtn.addEventListener("click", spinRoulette);
     resetResultBtn.addEventListener("click", resetResultOnly);
@@ -809,8 +733,7 @@ h1{
     onValue(attendanceRootRef, snap => {
       attendanceData = snap.val() || {};
       updateCounts();
-      updateMySelectedBox();
-      renderAttendanceGrid();
+      renderAdminAttendanceGrid();
     });
 
     onValue(resultRef, snap => {
@@ -818,9 +741,7 @@ h1{
     });
 
     updateCounts();
-    updateMySelectedBox();
-    renderAttendanceGrid();
+    renderAdminAttendanceGrid();
   </script>
-
 </body>
 </html>
